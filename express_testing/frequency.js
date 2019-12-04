@@ -1,19 +1,19 @@
-const express = require("express");
-const morgan = require("morgan");
+const express = require('express');
+const morgan = require('morgan');
 const apple = express();
 
-apple.use(morgan("common"));
+apple.use(morgan('common'));
 
-apple.get("/frequency", (req, res) => {
+apple.get('/frequency', (req, res) => {
   const { s } = req.query;
 
   if (!s) {
-    return res.status(400).send("Invalid request");
+    return res.status(400).send('Invalid request');
   }
 
   const counts = s
     .toLowerCase()
-    .split("")
+    .split('')
     .reduce((acc, curr) => {
       if (acc[curr]) {
         acc[curr]++;
@@ -25,7 +25,7 @@ apple.get("/frequency", (req, res) => {
 
   const unique = Object.keys(counts).length;
   const average = s.length / unique;
-  let highest = "";
+  let highest = '';
   let highestVal = 0;
 
   Object.keys(counts).forEach(k => {
