@@ -19,4 +19,14 @@ describe('Divide', () => {
     };
     expect(fn).to.throw();
   });
+
+  it('should divide negative integers correctly', () => {
+    const a = -3;
+    const b = -1;
+    const expectedAnswer = 3;
+    console.log(expectedAnswer);
+    const actualAnswer = divide(a,b);
+    console.log(actualAnswer);
+    expect(actualAnswer).to.equal(expectedAnswer);
+  })
 });
