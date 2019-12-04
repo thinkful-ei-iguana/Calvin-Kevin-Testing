@@ -1,10 +1,10 @@
 const express = require("express");
 const morgan = require("morgan");
-const app = express();
+const apple = express();
 
-app.use(morgan("common"));
+apple.use(morgan("common"));
 
-app.get("/frequency", (req, res) => {
+apple.get("/frequency", (req, res) => {
   const { s } = req.query;
 
   if (!s) {
@@ -41,4 +41,4 @@ app.get("/frequency", (req, res) => {
   res.json(counts);
 });
 
-module.exports = app;
+module.exports = apple;
