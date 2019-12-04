@@ -1,9 +1,9 @@
-const chai = require('chai');
+const chai = require("chai");
 const expect = chai.expect;
-const divide = require('../index');
+const divide = require("../index");
 
-describe('Divide', () => {
-  it('should divide positive integers correctly', () => {
+describe("Divide", () => {
+  it("should divide positive integers correctly", () => {
     const a = 8;
     const b = 4;
     const expectedAnswer = 2;
@@ -11,22 +11,22 @@ describe('Divide', () => {
     expect(actualAnswer).to.equal(expectedAnswer);
   });
 
-  it('should throw an error when dividing by zero', () => {
+  it("should throw an error when dividing by zero", () => {
     const a = 8;
     const b = 0;
     const fn = () => {
-      divide(a,b);
+      divide(a, b);
     };
     expect(fn).to.throw();
   });
 
-  it('should divide negative integers correctly', () => {
+  it("should divide negative integers correctly", () => {
     const a = -3;
     const b = -1;
     const expectedAnswer = 3;
     console.log(expectedAnswer);
-    const actualAnswer = divide(a,b);
+    const actualAnswer = divide(a, b);
     console.log(actualAnswer);
     expect(actualAnswer).to.equal(expectedAnswer);
-  })
+  });
 });
